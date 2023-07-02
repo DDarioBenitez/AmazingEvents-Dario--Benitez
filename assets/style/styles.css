@@ -1,0 +1,150 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+   
+}
+body{
+    background-color:#f5f1e8;
+}
+h1{
+    font-size: 4rem;
+    color: #962c4c;
+    background-color: transparent;
+}
+ 
+.header-1{
+    background-color: #f3c6b9;
+    min-height: 18vh;
+}
+
+/* header-details */
+.header-det{
+    background-color: #f3c6b9;
+    height: auto;
+}
+
+/* body contac */
+.body-contact{
+    height: 100vh ;
+}
+.footer{
+    background-color: #f3c6b9;
+    min-height: 5.3vh;
+}
+.social{
+    width: 68%;
+}
+
+.main-table td{
+    background-color:#f5f1e8
+}
+
+/* responsive */
+
+@media only screen and (min-width: 768px) and (max-width: 1023px){
+    .carousel-m{
+        min-height: 20vh;
+    }
+    .carousel-img{
+        height: 25vh;
+        width: 100%;
+    }
+    .m-nav{
+        font-size: 1.5rem !important;
+    }
+    .body-contact{
+        height: 100vh ;
+    }
+    .footer div>a>img{
+        width:68% !important;
+    }
+}
+@media only screen and (min-width: 1024px){
+.nav-text{
+    font-size: 1.2rem !important;
+}
+.carousel-m{
+    min-height: 20vh;
+}
+.carousel-img{
+    height: 30vh;
+    width: 100%;
+}
+.main-card img{
+    height: 30vh;
+    object-fit: cover;
+}
+.main-card div>p{
+    font-size: 1.2rem !important;
+}
+.main-check{
+    font-size: 1rem !important;
+}
+.search{
+    height: 5vh;
+}
+.search input{
+    
+    font-size: 1.1rem;
+}
+.search button{
+    
+    font-size: 1rem;
+}
+.body-contact{
+    height: 100vh ;
+}
+}
+@media only screen and (min-width: 1440px){
+    .m-nav{
+        height: 5vh !important;
+    }
+    .m-nav div> a{
+        height: auto !important;
+    }
+    .nav-text{
+        font-size: 1.2rem !important;
+    }
+    .d-nav{
+        height: 5vh;
+    }
+    .main-check{
+        font-size: 1rem !important;
+    }
+    .search{
+        height: auto;
+    }
+    .search input,button{
+        font-size: 1rem !important;
+    }
+    .cards-main{
+        min-height: 100vh !important;
+    }
+    .main-card{
+        width: 20% !important;
+        height: 47.3vh !important;
+
+    }
+    .main-card img{
+        width: 100% !important;
+        height: 30vh !important;
+        object-fit: cover;
+    }
+    .main-card div>p{
+        font-size: 1rem !important;
+    }
+    .footer div>a{
+        align-self: center;
+    }
+    .footer div>a>img{
+        width:48% !important;
+    }
+    .footer{
+        padding: 0 !important;
+        height: 2vh !important;
+    }
+    .body-contact{
+        height: 100vh ;
+    }
+}
