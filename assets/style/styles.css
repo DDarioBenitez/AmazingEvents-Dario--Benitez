@@ -15,7 +15,7 @@ h1{
  
 .header-1{
     background-color: #f3c6b9;
-    min-height: 18vh;
+    min-height: 5vh;
 }
 
 /* header-details */
@@ -40,15 +40,54 @@ h1{
     background-color:#f5f1e8
 }
 
+.h-md-50 {
+    height: 50% !important;
+}
+.h-md-100 {
+    height: 100% !important;
+}
+
 /* responsive */
+@media only screen and (min-width: 430px){
+    .carousel{
+        height: 100% !important;
+    }
+    .carousel-div{
+        height: 100% !important;
+    }
+    .carousel-item{
+        height: 100% !important;
+    }
+    .carousel-img{ 
+         height: 100% !important;
+        object-fit: cover;
+        object-position: center center ;
+        width: 100%;
+    }
+    .carousel-m{
+        height: 35vh;
+    }
+}
 
 @media only screen and (min-width: 768px) and (max-width: 1023px){
-    .carousel-m{
-        min-height: 20vh;
+   
+    .carousel{
+        height: 100% !important;
     }
-    .carousel-img{
-        height: 25vh;
+    .carousel-div{
+        height: 100% !important;
+    }
+    .carousel-item{
+        height: 100% !important;
+    }
+    .carousel-img{ 
+         height: 100% !important;
+        object-fit: cover;
+        object-position: center center ;
         width: 100%;
+    }
+    .carousel-m{
+        height: 35vh;
     }
     .m-nav{
         font-size: 1.5rem !important;
@@ -64,12 +103,23 @@ h1{
 .nav-text{
     font-size: 1.2rem !important;
 }
-.carousel-m{
-    min-height: 20vh;
+.carousel{
+    height: 100% !important;
 }
-.carousel-img{
-    height: 30vh;
+.carousel-div{
+    height: 100% !important;
+}
+.carousel-item{
+    height: 100% !important;
+}
+.carousel-img{ 
+     height: 100% !important;
+    object-fit: cover;
+    object-position: center center ;
     width: 100%;
+}
+.carousel-m{
+    height: 35vh;
 }
 .main-card img{
     height: 30vh;
@@ -82,7 +132,7 @@ h1{
     font-size: 1rem !important;
 }
 .search{
-    height: 5vh;
+    min-height: 5vh;
 }
 .search input{
     
@@ -109,6 +159,24 @@ h1{
     .d-nav{
         height: 5vh;
     }
+    .carousel{
+        height: 100% !important;
+    }
+    .carousel-div{
+        height: 100% !important;
+    }
+    .carousel-item{
+        height: 100% !important;
+    }
+    .carousel-img{ 
+         height: 100% !important;
+        object-fit: cover;
+        object-position: center center ;
+        width: 100%;
+    }
+    .carousel-m{
+        height: 35vh;
+    }
     .main-check{
         font-size: 1rem !important;
     }
@@ -122,13 +190,14 @@ h1{
         min-height: 100vh !important;
     }
     .main-card{
+        display: flex;
         width: 20% !important;
-        height: 47.3vh !important;
+        min-height: 48vh !important;
 
     }
     .main-card img{
         width: 100% !important;
-        height: 30vh !important;
+        min-height: 30vh !important;
         object-fit: cover;
     }
     .main-card div>p{

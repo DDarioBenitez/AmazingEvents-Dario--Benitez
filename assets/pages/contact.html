@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../style/styles.css">
 </head>
 
-<body class="body-contact d-flex flex-column flex-wrap justify-content-between">
+<body class="">
     <header class="header-1 flex-row-2">
         <nav class="m-nav navbar navbar-expand-lg">
             <div class="d-nav container-fluid">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </nav>
-        <section class="carousel-m">
+        <!-- <section class="carousel-m">
             <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel">
                 <div class="carousel-inner position-relative">
                     <h1 class="z-3 position-absolute top-50 start-50 translate-middle">Contact</h1>
@@ -75,24 +75,52 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-        </section>
+        </section> -->
     </header>
 
-    <main class="container-fluid flex-row-1 gap-3 col-md-10 col-xl-7">
-        <div class="mb-3">
-            <label for="formGroupExampleInput" class="form-label">Name</label>
-            <input type="text" class="form-control" id="formGroupExampleInput">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-        </div>
-        <div class="d-flex justify-content-end ">
-            <button type="submit" class="btn btn-outline-dark align-items-end">Submit</button>
+    <main class="container-fluid d-flex flex-column align-items-center flex-row-1 gap-3">
+        <section class="carousel-m col-12">
+            <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-div carousel-inner position-relative">
+                    <h1 class="z-3 position-absolute top-50 start-50 translate-middle">Contact</h1>
+                    <div class="carousel-item active " data-bs-interval="7000">
+                        <img src="../images/optional_banner_4.jpg" class="d-block w-100 carousel-img" alt="banner-1">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="7000">
+                        <img src="../images/optional_banner_5.jpg" class="d-block w-100 carousel-img" alt="banner-2">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="7000">
+                        <img src="../images/optional_banner_3.jpg" class="d-block w-100 carousel-img" alt="banner-3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev justify-content-xl-evenly col-xl-2 bg-transparent" type="button"
+                    data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-transparent" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next justify-content-xl-evenly col-xl-2 bg-transparent" type="button"
+                    data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-transparent" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+        <div class="col-11 col-md-10 col-xl-7 p-2">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+            </div>
+            <div class="d-flex justify-content-end ">
+                <button type="submit" class="btn btn-outline-dark align-items-end">Submit</button>
+            </div>
         </div>
     </main>
 
