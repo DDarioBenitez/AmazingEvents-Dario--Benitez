@@ -5,7 +5,7 @@ const cardData = data.events
 function newArray(array){
     let date=[]
     for (let datePast of array){
-        if (datePast.date<"2023-01-01"){
+        if (datePast.date<data.currentDate){
             date.push(datePast)
         }
     } return date
@@ -30,7 +30,7 @@ function newCard(data){
     </div>
 </article>`
 }
-function dataCard(data,elementHtml){
+function imprCard(data,elementHtml){
     let template=""
     for (let infNewCard of data){
         template += newCard(infNewCard)
@@ -38,4 +38,57 @@ function dataCard(data,elementHtml){
     elementHtml.innerHTML += template
 }
 
- dataCard(pastData,containerCards)
+ imprCard(pastData,containerCards)
+
+ //checkbox
+let divCheck = document.getElementById("div-check") 
+
+let category = pastData.map(category => category.category)
+console.log(category)
+let ordenReduce= Array.from( new Set(category))
+console.log(ordenReduce)
+
+
+
+ function newCheck(data){
+    return `<div class=" main-check form-check pt-1 p-1 m-0 text-start col-md-3 fs-4 col-xl-2 col-xxl-1">
+    <input class="form-check-input" type="checkbox" value= "${data}" id="flexCheckDefault1">
+    <label class="form-check-label" for="flexCheckDefault1">
+        ${data}
+    </label>
+</div>`
+ }
+
+ function imprCheck(data, elementHtml, checkNew){
+    let template=""
+    for (let newCheck of data) {
+        template += checkNew(newCheck)
+    }
+    elementHtml.innerHTML += template
+ }
+ imprCheck(ordenReduce,divCheck,newCheck)
+
+ function empty(elementHtml){
+    elementHtml.innerHTML=""
+}
+
+function filterCards(events,eventsFilterStrings){
+    let filter =  events.filter(event => eventsFilterStrings.includes(event.category) )
+    return filter
+  }
+  
+  
+  divCheck.addEventListener("change", (e)=>{
+  let checkBoxs =document.querySelectorAll('input[type="checkbox"]:checked') 
+  let checkSelect=Array.from(checkBoxs).map(checkBox=> checkBox.value)
+  console.log(checkBoxs)
+  console.log(checkSelect)
+  let cardsSelect=filterCards(pastData,checkSelect)
+  empty(cards)
+      if(checkSelect.length==0){
+          return imprCard(pastData,cards,newCard)
+      }else{
+          return imprCard(cardsSelect,cards,newCard)
+      }
+  }
+  )
