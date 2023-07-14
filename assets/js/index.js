@@ -1,19 +1,16 @@
 const eventData=data.events
-console.log(eventData)
+// console.log(eventData)
 
-
-    let search = document.getElementById("inputSearch")
+let search = document.getElementById("inputSearch")
     
-    let cards= document.getElementById("cards");
+let cards= document.getElementById("cards");
  //checkbox
-    let divCheck = document.getElementById("div-check") 
-    let category = eventData.map(category => category.category);
-    // console.log(category)
-    let ordenReduce= Array.from( new Set(category));
-    // console.log(ordenReduce)
+let divCheck = document.getElementById("div-check") 
+let category = eventData.map(category => category.category);
+// console.log(category)
+let ordenReduce= Array.from( new Set(category));
+// console.log(ordenReduce)
 //Cards
-
-
 
 function newCard(data){
     return `<article class="main-card card col-10 p-2 col-lg-5">
@@ -64,8 +61,6 @@ function imprCard(data,elementHtml){
     elementHtml.innerHTML=""
 }
 
-
-
 let checkBoxs = document.querySelectorAll('input[type="checkbox"]');
 let checksChecked = Array.from(checkBoxs)
 function arrayChecks(arrayChecks){
@@ -76,14 +71,13 @@ function arrayChecks(arrayChecks){
 // console.log(checkBoxs)
 // console.log(checkseleccionado);
 
-
 divCheck.addEventListener("change", (e)=>{
 let checkSelect = arrayChecks(checksChecked)
-console.log(checkSelect)
+// console.log(checkSelect)
 let searchValue = search.value.toLowerCase()
 empty(cards)
 let arraysCardsSelect = filterConvined(eventData,checkSelect,search)
-console.log(arraysCardsSelect);
+// console.log(arraysCardsSelect);
     if(checkSelect.length==0 && searchValue.length>0 && arraysCardsSelect.length==0 || checkSelect.length==0 && searchValue.length>0){
         return errosMensage(cards)
     }else if(arraysCardsSelect.length==0 && checkSelect.length>0){
@@ -95,17 +89,15 @@ console.log(arraysCardsSelect);
     }
 }
 )
- // Search
 
+ // Search
 search.addEventListener("input", (e)=>{
     let searchValue = search.value.toLowerCase()
-    console.log(searchValue)
+    // console.log(searchValue)
     let checkSelect = arrayChecks(checksChecked)
-    // let searchCards= includesCardsOfSearch(eventData,search)
-    // console.log(searchCards)
     empty(cards) 
     let searchCardsConvined = filterConvined(eventData,checkSelect,search)
-    console.log(searchCardsConvined)
+    // console.log(searchCardsConvined)
     if(searchCardsConvined.length== 0 && searchValue.length>0){   
         return errosMensage(cards)
     }else if(searchCardsConvined.length==0){

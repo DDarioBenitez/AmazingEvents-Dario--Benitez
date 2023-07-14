@@ -90,11 +90,11 @@ function filterCardsCheck(events,checkValue){
 
   divCheck.addEventListener("change", (e)=>{
    let checkSelect = arrayChecks(checksChecked)
-    console.log(checkSelect)
-    let searchValue = search.value.toLowerCase()
+    // console.log(checkSelect)
+    // let searchValue = search.value.toLowerCase()
     console.log(searchValue)
     let arraysCardsSelect=filterConvined(pastData,checkSelect,search)
-    console.log(arraysCardsSelect);
+    // console.log(arraysCardsSelect);
     empty(cards)
     if(checkSelect.length==0 && searchValue.length>0 && arraysCardsSelect.length==0 || checkSelect.length==0 && searchValue.length>0){
         return errosMensage(cards)
@@ -113,11 +113,11 @@ function filterCardsCheck(events,checkValue){
 
 search.addEventListener("input", (e)=>{
     let searchValue = search.value.toLowerCase()
-    console.log(searchValue)
+    // console.log(searchValue)
     let checkSelect =arrayChecks(checksChecked)
     empty(cards) 
     let searchCardsConvined = filterConvined(pastData,checkSelect,search)
-    console.log(searchCardsConvined)
+    // console.log(searchCardsConvined)
     if(searchCardsConvined.length == 0 && searchValue.length>0){   
         return errosMensage(cards)
     }else if(searchCardsConvined.length==0){

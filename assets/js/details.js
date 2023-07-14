@@ -1,22 +1,22 @@
 let eventData = data.events 
-console.log(eventData)
+// console.log(eventData)
 
 let dateEvent= data.currentDate
-console.log(dateEvent)
+// console.log(dateEvent)
 
 let eventSearch= location.search
-console.log(eventSearch)
+// console.log(eventSearch)
 
 let eventIdSearch = new URLSearchParams(eventSearch)
-console.log(eventIdSearch);
+// console.log(eventIdSearch);
 
 let eventId = eventIdSearch.get('id')
-console.log(eventId)
+// console.log(eventId)
 
 let detailsMain = document.getElementById("details-main") 
 
 let eventRequired = eventData.find(event => event._id == eventId)
-console.log(eventRequired)
+// console.log(eventRequired)
 
 function  createCardPast(event) {   
     return  `<section class="col-11 card col-md-10">
