@@ -25,7 +25,7 @@ function newCard(data){
         <p class="card-text fs-3 m-xl-0">${data.description}</p>
         <div class="d-flex justify-content-between m-0">
             <p class="align-self-center m-0 fw-bold fs-3">$${data.price}USD</p>
-            <a href="./assets/pages/details.html" class="btn btn-outline-dark align-self-center">Details</a>
+            <a href="./details.html?id=${data._id}" class="btn btn-outline-dark align-self-center">Details</a>
         </div>
     </div>
 </article>`
@@ -44,9 +44,9 @@ function imprCard(data,elementHtml){
 let divCheck = document.getElementById("div-check") 
 
 let category = pastData.map(category => category.category)
-console.log(category)
+// console.log(category)
 let ordenReduce= Array.from( new Set(category))
-console.log(ordenReduce)
+// console.log(ordenReduce)
 
 
 
@@ -72,23 +72,72 @@ console.log(ordenReduce)
     elementHtml.innerHTML=""
 }
 
-function filterCards(events,eventsFilterStrings){
-    let filter =  events.filter(event => eventsFilterStrings.includes(event.category) )
+let checkBoxs = document.querySelectorAll('input[type="checkbox"]');
+let checksChecked = Array.from(checkBoxs)
+function arrayChecks(arrayChecks){
+    let aux=arrayChecks.filter(check=> check.checked == true)
+    return aux.map(check=> check.value)
+}
+
+function filterCardsCheck(events,checkValue){
+    if(checkValue.length==0){
+        return events
+    }else{
+        let filter =  events.filter(event => checkValue.includes(event.category) )
+        return filter
+    }
+  } 
+
+  divCheck.addEventListener("change", (e)=>{
+   let checkSelect = arrayChecks(checksChecked)
+    console.log(checkSelect)
+    let searchValue = search.value.toLowerCase()
+    console.log(searchValue)
+    let arraysCardsSelect=filterConvined(pastData,checkSelect,search)
+    console.log(arraysCardsSelect);
+    empty(cards)
+    if(checkSelect.length==0 && searchValue.length>0 && arraysCardsSelect.length==0 || checkSelect.length==0 && searchValue.length>0){
+        return errosMensage(cards)
+    }else if(arraysCardsSelect.length==0 && checkSelect.length>0){
+        return errosMensage(cards)
+    }else if(arraysCardsSelect.length==0){
+        return imprCard(pastData,cards)
+    }else{
+        return imprCard(arraysCardsSelect,cards)
+    }
+}
+  )
+
+  //Search
+  let search = document.getElementById("inputSearch")
+
+search.addEventListener("input", (e)=>{
+    let searchValue = search.value.toLowerCase()
+    console.log(searchValue)
+    let checkSelect =arrayChecks(checksChecked)
+    empty(cards) 
+    let searchCardsConvined = filterConvined(pastData,checkSelect,search)
+    console.log(searchCardsConvined)
+    if(searchCardsConvined.length == 0 && searchValue.length>0){   
+        return errosMensage(cards)
+    }else if(searchCardsConvined.length==0){
+    return imprCard(pastData,cards)
+    }else{
+        return imprCard(searchCardsConvined,cards)
+    }
+})
+
+  function includesCardsOfSearch(events,input){
+    let filter =  events.filter(event => event.name.toLowerCase().includes(input.value.toLowerCase()) )
     return filter
   }
-  
-  
-  divCheck.addEventListener("change", (e)=>{
-  let checkBoxs =document.querySelectorAll('input[type="checkbox"]:checked') 
-  let checkSelect=Array.from(checkBoxs).map(checkBox=> checkBox.value)
-  console.log(checkBoxs)
-  console.log(checkSelect)
-  let cardsSelect=filterCards(pastData,checkSelect)
-  empty(cards)
-      if(checkSelect.length==0){
-          return imprCard(pastData,cards,newCard)
-      }else{
-          return imprCard(cardsSelect,cards,newCard)
-      }
+
+  //Filtro Cruzado
+  function filterConvined(events,checkValue,searchValue){
+    let search = includesCardsOfSearch(events,searchValue)
+    let check = filterCardsCheck(search,checkValue)
+   return check
   }
-  )
+  function errosMensage(elementHtml){
+    return elementHtml.innerHTML ="<h5>No matches found</h5>"
+}

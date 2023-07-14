@@ -17,11 +17,16 @@ h1{
     background-color: #f3c6b9;
     min-height: 5vh;
 }
-
+.all-main{
+    min-height: 86vh;
+}
 /* header-details */
 .header-det{
     background-color: #f3c6b9;
     height: auto;
+}
+.details-main{
+    min-height: 88vh;
 }
 
 /* body contac */
@@ -48,6 +53,13 @@ h1{
 }
 
 /* responsive */
+@media only screen and (min-width: 320px){
+ /*Details */
+ .details-main{
+    min-height: 81.5vh;
+}
+}
+
 @media only screen and (min-width: 430px){
     .carousel{
         height: 100% !important;
@@ -67,10 +79,16 @@ h1{
     .carousel-m{
         height: 35vh;
     }
+   .details-main{
+    min-height: 81.5vh;
+}
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px){
    
+    .all-main{
+        min-height: 84vh;
+    }
     .carousel{
         height: 100% !important;
     }
@@ -97,6 +115,9 @@ h1{
     }
     .footer div>a>img{
         width:68% !important;
+    }
+    .details-main{
+        min-height: 79vh;
     }
 }
 @media only screen and (min-width: 1024px){
@@ -142,6 +163,12 @@ h1{
     
     font-size: 1rem;
 }
+.details-main{
+    min-height: 82vh;
+}
+.footer{
+    padding-top: 0 !important ;
+}
 .body-contact{
     height: 100vh ;
 }
@@ -159,7 +186,7 @@ h1{
     .d-nav{
         height: 5vh;
     }
-    .carousel{
+     .carousel{
         height: 100% !important;
     }
     .carousel-div{
@@ -176,6 +203,9 @@ h1{
     }
     .carousel-m{
         height: 35vh;
+    }
+    .all-main{
+        min-height: 88.2vh;
     }
     .main-check{
         font-size: 1rem !important;
@@ -212,6 +242,9 @@ h1{
     .footer{
         padding: 0 !important;
         height: 2vh !important;
+    }
+    .details-main{
+        min-height: 88vh;
     }
     .body-contact{
         height: 100vh ;
