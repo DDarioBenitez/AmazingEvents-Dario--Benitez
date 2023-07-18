@@ -1,23 +1,30 @@
-let eventData = data.events 
-// console.log(eventData)
+fetch("https://mindhub-xj03.onrender.com/api/amazing")
+.then(data => data.json())
+.then(data=>{
+    let eventData = data.events 
+    // console.log(eventData)
 
-let dateEvent= data.currentDate
-// console.log(dateEvent)
+    let dateEvent= data.currentDate
+    // console.log(dateEvent)
 
-let eventSearch= location.search
-// console.log(eventSearch)
+    let eventSearch= location.search
+    // console.log(eventSearch)
 
-let eventIdSearch = new URLSearchParams(eventSearch)
-// console.log(eventIdSearch);
+    let eventIdSearch = new URLSearchParams(eventSearch)
+    // console.log(eventIdSearch);
 
-let eventId = eventIdSearch.get('id')
-// console.log(eventId)
+    let eventId = eventIdSearch.get('id')
+    // console.log(eventId)
 
-let detailsMain = document.getElementById("details-main") 
+    let detailsMain = document.getElementById("details-main") 
 
-let eventRequired = eventData.find(event => event._id == eventId)
-// console.log(eventRequired)
+    let eventRequired = eventData.find(event => event._id == eventId)
+    // console.log(eventRequired)
 
+    imprCardDetails(eventRequired,dateEvent,detailsMain);
+})
+
+//Funciones
 function  createCardPast(event) {   
     return  `<section class="col-11 card col-md-10">
     <div class="row g-0 justify-content-evenly align-items-center">
@@ -80,7 +87,7 @@ function  createCardPast(event) {
                     <li>
                         Capacity: ${event.capacity}
                     </li>
-                    <li>e
+                    <li>
                         Estimate: ${event.estimate}
                     </li>
                     <li>
@@ -100,4 +107,3 @@ function  createCardPast(event) {
         return elementHtml.innerHTML= createCardUpComing(event)
     }
  }
- imprCardDetails(eventRequired,dateEvent,detailsMain);
